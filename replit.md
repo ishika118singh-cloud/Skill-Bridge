@@ -1,44 +1,48 @@
-# [Project name]
+# SkillSwap
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+SkillSwap helps people share skills, find peer mentors, and arrange local demo learning sessions.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
-- `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- `pnpm install` — install workspace dependencies
+- `pnpm --filter @workspace/skillswap run dev` — run SkillSwap in development
+- `pnpm --filter @workspace/skillswap run build` — build the static app
+- No database, API, or secrets are required for SkillSwap.
 
 ## Stack
 
-- pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- HTML, CSS, and vanilla JavaScript for the app; Vite is only the static development/build tool.
+- pnpm workspace for package management.
+- Browser `localStorage` for the single-device demo only.
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/skillswap/index.html` — app document and entry point
+- `artifacts/skillswap/src/main.js` — page rendering, navigation, and demo interactions
+- `artifacts/skillswap/src/styles.css` — responsive UI styling
+- `artifacts/skillswap/public/images/` — generated demo portraits and portfolio artwork
+- `artifacts/skillswap/README.md` — run instructions and local-storage limitations
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Keep the frontend framework-free: do not add React or another UI framework.
+- This product is a browser-only demo, not a real multi-user service or secure authentication system.
+- Seeded mentor/project examples use a separate localStorage key from user-created profiles, projects, and session requests.
+- Do not present localStorage data as shared across people, browsers, or devices.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+Discover peer mentors, exchange skills, manage a teacher profile and portfolio, and coordinate demo session requests through their status flow.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- The user explicitly requires HTML, CSS, and vanilla JavaScript only.
+- Keep profiles, projects, and session requests in a clearly disclosed localStorage demo; do not imply real multi-user persistence.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Use the `@workspace/skillswap` pnpm filter from the workspace root; the Vite package uses the workspace's `catalog:` version.
+- Local demo passwords are not encrypted. Never advise entering a real password or sensitive data.
 
 ## Pointers
 
