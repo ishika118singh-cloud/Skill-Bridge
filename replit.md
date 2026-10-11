@@ -1,13 +1,13 @@
-# SkillSwap
+# Skill Bridge
 
-SkillSwap helps people share skills, find peer mentors, and arrange local demo learning sessions.
+Skill Bridge helps people share skills, find peer mentors, and arrange local demo learning sessions.
 
 ## Run & Operate
 
 - `pnpm install` — install workspace dependencies
-- `pnpm --filter @workspace/skillswap run dev` — run SkillSwap in development
+- `pnpm --filter @workspace/skillswap run dev` — run Skill Bridge in development
 - `pnpm --filter @workspace/skillswap run build` — build the static app
-- No database, API, or secrets are required for SkillSwap.
+- No database, API, or secrets are required for Skill Bridge.
 
 ## Stack
 
@@ -42,6 +42,7 @@ Discover peer mentors, exchange skills, manage a teacher profile and portfolio, 
 ## Gotchas
 
 - Use the `@workspace/skillswap` pnpm filter from the workspace root; the Vite package uses the workspace's `catalog:` version.
+- Keep the internal workspace slug and `skillswap.*` localStorage keys stable so existing workflows and saved local demo data survive branding changes.
 - Local demo passwords are not encrypted. Never advise entering a real password or sensitive data.
 
 ## Pointers

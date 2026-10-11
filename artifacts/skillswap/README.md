@@ -1,6 +1,6 @@
-# SkillSwap
+# Skill Bridge
 
-SkillSwap is a static, vanilla JavaScript peer-learning demo. It is built with a native HTML entry, CSS, and browser JavaScript modules; Vite is only the development/build tool.
+Skill Bridge is a static, vanilla JavaScript peer-learning demo. It is built with a native HTML entry, CSS, and browser JavaScript modules; Vite is only the development/build tool.
 
 ## Run locally
 
@@ -24,7 +24,9 @@ For a production build, run `pnpm --filter @workspace/skillswap run build`. The 
 
 There is no API, backend, shared account system, or external authentication. All account details and interactions remain in this browser's `localStorage`; they do not sync to another browser or device. This is demo persistence, **not secure authentication**. Do not enter a real password or sensitive personal information.
 
-Storage uses versioned keys:
+The workspace package slug and the versioned `skillswap.*` storage keys intentionally remain unchanged so existing workflows and local demo data continue working after the brand rename.
+
+Storage uses these stable versioned keys:
 
 - `skillswap.demo.v1` — seeded, labeled demo mentor and portfolio records only (seed shape versioned internally).
 - `skillswap.users.v1` — locally created demo profiles.
