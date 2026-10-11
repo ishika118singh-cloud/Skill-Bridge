@@ -1,0 +1,1 @@
+- [pnpm override reification](pnpm-override-reification.md) — after changing workspace overrides, sync installed packages before trusting runtime checks.
