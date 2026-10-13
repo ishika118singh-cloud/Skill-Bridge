@@ -38,7 +38,7 @@ jobs:
         run: pnpm install --no-frozen-lockfile
 
       - name: Build project
-        run: pnpm run build
+        run: pnpm --filter ./artifacts/skillswap run build
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
