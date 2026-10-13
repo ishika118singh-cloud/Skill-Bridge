@@ -43,7 +43,7 @@ jobs:
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./artifacts/skillswap/dist
+          path: ./artifacts/skillswap/dist/public
 
   deploy:
     needs: build
