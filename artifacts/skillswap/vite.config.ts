@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 const rawPort = process.env.PORT || '5173';
 const port = Number(rawPort);
 if (!Number.isFinite(port) || port <= 0) throw new Error(`Invalid PORT value: "${rawPort}"`);
-const basePath = process.env.BASE_PATH || '/';
+const basePath = process.env.BASE_PATH || '/Skill-Bridge/';
 
 export default defineConfig({
   base: basePath,
